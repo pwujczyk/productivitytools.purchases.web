@@ -1,12 +1,28 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {Component} from 'react';
+
+
+class Login extends Component{
+
+  render(){
+    return(
+      <div>
+        <div>pawel</div>
+        <button>clickme</button>
+      </div>
+      
+    )
+  }
+}
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <Login></Login>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
