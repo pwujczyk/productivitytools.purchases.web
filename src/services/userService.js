@@ -14,3 +14,7 @@ const userManager=new UserManager(config)
 export function signinRedirect(){
     return userManager.signinRedirect();
 }
+
+export function signInRedirectCallback(){
+    return userManager.signinRedirectCallback();
+}
