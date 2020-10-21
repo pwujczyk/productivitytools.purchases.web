@@ -44,3 +44,5 @@ export function signoutRedirectCallback() {
     return userManager.signoutRedirectCallback()
   }
   
+
+  export default userManager;
