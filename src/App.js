@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import SignInOidc from './pages/signin-oidc'
 import './App.css';
@@ -7,8 +7,14 @@ import Login from './pages/login'
 import PrivateRoute from './utils/privateroute';
 import { Provider } from 'react-redux'
 import store from './store'
+import {loadUserFromStorage} from './services/userService'
 
 function App() {
+
+  useEffect(()=>{
+    loadUserFromStorage(store)
+  },[]);
+
   return (
     <Provider store={store}>
       <Router>

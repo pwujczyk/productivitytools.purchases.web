@@ -4,11 +4,11 @@ import {signInRedirectCallback} from '../services/userService.js'
 import {useHistory} from 'react-router-dom'
 
 function SignInOidc(){
-
         const history=useHistory()
     useEffect(()=>{
         async function signInAsync(){
             await signInRedirectCallback();
+            history.push('/')
         }
         signInAsync()
     },[history])
