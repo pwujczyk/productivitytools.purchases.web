@@ -4,6 +4,7 @@ import SignInOidc from './pages/signin-oidc'
 import './App.css';
 import Home from './pages/home'
 import Login from './pages/login'
+import List from './pages/list'
 import PrivateRoute from './utils/privateroute';
 import { Provider } from 'react-redux'
 import store from './store'
@@ -25,6 +26,7 @@ function App() {
             <Route path="/signin-oidc" component={SignInOidc} />
             <Route path="/Home" component={Home} />
             <PrivateRoute exact path="/" component={Home} />
+            <PrivateRoute exact path="/List" component={List} />
           </Switch>
         </Router>
       </AuthProvider>

@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {signOutRedirect} from '../services/userService'
-import {useHistory} from 'react-router-dom'
 
-function Home(){
-    const history=useHistory()
+function List(){
     const[unSececured,setUnsecured]=useState([])
     const[secured,setSecured]=useState([])
 
@@ -27,26 +25,20 @@ function Home(){
 
     
     function signOut(){
-       
         signOutRedirect();
-    }
-    function list(){
-        
-        history.push('/List')
     }
 
     return (
         <div>
             <button onClick={()=>signOut()}>sign out</button>
-            <p>This is homepage</p>
+            <p>This is listpage</p>
             <p>Unsecured</p>
             <p>{unSececured.hi}</p>
 
             <p>Secured</p>
             <p>{secured.hi}</p>
-            <button onClick={()=>list()}>Lista</button>
         </div>
     )
 }
 
-export default Home
+export default List
