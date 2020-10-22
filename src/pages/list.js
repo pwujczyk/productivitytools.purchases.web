@@ -1,28 +1,27 @@
 import React, {useState, useEffect} from 'react';
 import {signOutRedirect} from '../services/userService'
+import * as apiService from '../services/apiService'
 
 function List(){
     const[unSececured,setUnsecured]=useState([])
     const[secured,setSecured]=useState([])
 
     useEffect(()=>{
-        fetch(`http://localhost:58197/Test/Hi`,{
-            mode:'cors',
-            crossDomain:true,
-            method:"GET",
-        })
-        .then(res=>res.json())
-        .then(json=>setUnsecured(json))
-
-        fetch(`http://localhost:58197/Test/HiSecure`,{
-            mode:'cors',
-            crossDomain:true,
-            method:"GET",
-        })
-        .then(res=>res.json())
-        .then(json=>setSecured(json))
+        getHi();
+        getHiSecured();
     },[]);
 
+    async function getHi(){
+        debugger;
+        const hi=await apiService.getHi();
+        setUnsecured(hi);
+    }
+
+    async function getHiSecured(){
+        debugger;
+        const hisecured=await apiService.getHiSecured();
+        setSecured(hisecured);
+    }
     
     function signOut(){
         signOutRedirect();

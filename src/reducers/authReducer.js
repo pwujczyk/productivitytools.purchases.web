@@ -13,6 +13,7 @@ export default function(state=intialState,action){
                 isLoadingUser:false,
                 user: action.payload
             }
+            /*todo: get from local storage*/
         default:
             return state
     }
