@@ -2,7 +2,7 @@ import {UserManager} from 'oidc-client'
 import {storeUserError, storeUser} from '../actions/authActions'
 
 const config={
-    authority:"https://localhost:5001/",
+    authority:"https://identityserver.productivitytools.tech:8084/",
     client_id:"purchase",
     redirect_uri:"http://localhost:3000/signin-oidc",
     response_type:"id_token token",

@@ -6,7 +6,7 @@ function SignoutOidc() {
   const history = useHistory()
   useEffect(() => {
     async function signoutAsync() {
-        debugger;
+        
       await signoutRedirectCallback()
       history.push('/')
     }

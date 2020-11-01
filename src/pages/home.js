@@ -31,13 +31,13 @@ function Home(){
     },[]);
 
     async function getHi(){
-        debugger;
+
         const hi=await apiService.getHi();
         setUnsecured(hi);
     }
 
     async function getHiSecured(){
-        debugger;
+
         const hisecured=await apiService.getHiSecured();
         setSecured(hisecured);
     }

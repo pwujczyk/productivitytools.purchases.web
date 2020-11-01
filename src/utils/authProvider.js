@@ -9,13 +9,13 @@ export default function AuthProvider({userManager:manager, store, children}){
     userManager.current = manager
 
     const onUserLoaded = (user) => {
-        debugger;
+        
       console.log(`user loaded: ${user}`)
       store.dispatch(storeUser(user))
     }
 
     const onUserUnloaded = () => {
-        debugger;
+        
       console.log(`user unloaded`)
     }
 

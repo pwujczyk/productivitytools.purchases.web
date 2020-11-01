@@ -3,26 +3,18 @@ import {signOutRedirect} from '../services/userService'
 import * as apiService from '../services/apiService'
 
 function List(){
-    const[unSececured,setUnsecured]=useState([])
-    const[secured,setSecured]=useState([])
+    const[list,setList]=useState([])
 
     useEffect(()=>{
-        getHi();
-        getHiSecured();
+        getPurchaseList();
+
     },[]);
 
-    async function getHi(){
-        debugger;
-        const hi=await apiService.getHi();
-        setUnsecured(hi);
+    async function getPurchaseList(){
+        const r=await apiService.getPurchaseList();
+        setList(r);
     }
-
-    async function getHiSecured(){
-        debugger;
-        const hisecured=await apiService.getHiSecured();
-        setSecured(hisecured);
-    }
-    
+   
     function signOut(){
         signOutRedirect();
     }
@@ -32,10 +24,12 @@ function List(){
             <button onClick={()=>signOut()}>sign out</button>
             <p>This is listpage</p>
             <p>Unsecured</p>
-            <p>{unSececured.hi}</p>
-
-            <p>Secured</p>
-            <p>{secured.hi}</p>
+            
+            <p>
+                {list.map(l=>(
+                    <div key={l.id}>{l.id}</div>
+                ))}
+            </p>
         </div>
     )
 }
