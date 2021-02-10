@@ -61,7 +61,7 @@ function Home(){
 
             <p>Secured</p>
             <p>{secured.hi}</p>
-            <button onClick={()=>list()}>Lista</button>
+            <button color="primary" variant="contained" onClick={()=>list()}>Lista</button>
         </div>
     )
 }
